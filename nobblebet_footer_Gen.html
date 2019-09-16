@@ -1,0 +1,286 @@
+<html>
+<title>Marketting Sappers - Mail footer generator</title>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800&amp;subset=latin-ext" rel="stylesheet">
+</head>
+
+<body>
+    <style>
+    * {
+        font-family: sans-serif;
+    }
+
+    #html {
+        margin-top: 30px;
+    }
+
+    #html_button {
+        padding: 10px;
+        background: #695e39;
+        font-family: sans-serif;
+        margin-top: 20px;
+        display: inline-block;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+    }
+
+    #html_button:hover {
+        cursor: pointer;
+    }
+
+    .br {
+        display: inline-block;
+    }
+
+    h2 {
+        margin-top: 30px;
+    }
+
+    input,
+    select {
+        padding: 5px;
+        width: 100%;
+    }
+    </style>
+    <div ng-app="">
+        <div id="form" class="col-md-3">
+            <h2>Required</h2>
+            <select data-req="yes" name="singleSelect" id="singleSelect" ng-model="data.singleSelect">
+                <option value="">-- Select brand --
+                </option>
+                <option value="https://res.cloudinary.com/dcjhiunl4/image/upload/v1565679729/noblebet-logo_ulmyhi.png" ma selected>Noblebet
+                </option>
+            </select>
+            <br>
+            <br>
+            <p>
+                <input data-req="yes" type="text" ng-model="logo_link" placeholder="Link Under Logo">
+            </p>
+            <p>
+                <input data-req="yes" type="text" ng-model="name" placeholder="Name" value="www.nobblebet.pl">
+            </p>
+            <p>
+                <input data-req="yes" type="text" ng-model="surname" placeholder="Surame">
+            </p>
+            <p>
+                <input data-req="yes" type="text" ng-model="func" placeholder="Position">
+            </p>
+            <h2>Optional</h2>
+            <p>
+                <input type="text" ng-model="email" placeholder="Email adress">
+            </p>
+            <p>
+                <input type="text" ng-model="phone" placeholder="Phone number">
+            </p>
+            <p>
+                <input type="text" ng-model="skype" placeholder="Skype">
+            </p>
+            <div id="html_button">GENERATE
+            </div>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-3">
+            <table id="html" width="520" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td>
+                        <div id="html_gen">
+                            <table width="600" border="0" border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td height="5"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table width="auto" border="0" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td width="10"></td>
+                                                <td style="width: 180px;max-width: 180px;font-family:  'Montserrat', Arial , Helvetica, sans-serif;" align="center">
+                                                    <table style="" width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+                                                        <tr>
+                                                            <td style="width: 100%;text-align: center;" align="center">
+                                                                <img src="{{data.singleSelect}}">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="15"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width: 100%;text-align: center;" align="center">
+                                                                <a href="{{logo_link}}" style="text-decoration: none;">
+                                                                    <span style="color: #af8553;font-size: 14px;font-family:  'Montserrat', Arial , Helvetica, sans-serif;">
+                                                                        {{logo_link}}
+                                                                    </span>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td style="width: 5px;"></td>
+                                                <td style="width: 33px;">
+                                                    <span>
+                                                        <img src="https://res.cloudinary.com/dcjhiunl4/image/upload/v1565679729/line_nbzkqz.png">
+                                                    </span>
+                                                </td>
+                                                <td style="width: 25px;"></td>
+                                                <td style="width: 370px;max-width: 370px;" align="left">
+                                                    <table style="" width="100%" cellspacing="0" cellpadding="0" border="0" align="left">
+                                                        <tr>
+                                                            <td style="">
+                                                                <span style="color: black;font-size: 24px;line-height: 30px; font-weight: 600;font-family:  'Montserrat', Arial , Helvetica, sans-serif; white-space: nowrap;">{{name}} {{surname}}</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <span style="color: #af8553;font-size: 14px;font-weight: 600;font-family:  'Montserrat', Arial , Helvetica, sans-serif; white-space: nowrap;">{{func}}</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="25"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <table style="" width="100%" cellspacing="0" cellpadding="0" border="0" align="left">
+                                                                    <!--  MAIL   -->
+                                                                    <tr ng-if="email">
+                                                                        <td style="width: 19px;max-width: 19px;" >
+                                                                            <span>
+                                                                                <img src="https://res.cloudinary.com/dcjhiunl4/image/upload/v1565679729/icon-mail_dgbq0g.png">
+                                                                            </span>
+                                                                        </td>
+                                                                        <td style="width: 150px;">
+                                                                            <a href="mailto:{{email}}" style="text-decoration: none;color: #797979;">
+                                                                                <span style="color: #797979;text-decoration-color: #797979;font-size: 14px;text-decoration: none;font-family:  'Montserrat', Arial , Helvetica, sans-serif;">{{email}}</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr  ng-if="phone">
+                                                                        <td height="10"></td>
+                                                                    </tr>
+                                                                    <!--  PHONE   -->
+                                                                    <tr ng-if="phone">
+                                                                        <td style="width: 19px;max-width: 19px;" >
+                                                                            <span>
+                                                                                <img src="https://res.cloudinary.com/dcjhiunl4/image/upload/v1565679729/icon-phone_pfq5ji.png">
+                                                                            </span>
+                                                                        </td>
+                                                                        <td style="width: 150px;">
+                                                                            <a href="tel:{{phone}}" style="text-decoration: none;text-decoration-color: #797979;color: #797979;">
+                                                                                <span style="color: #797979;text-decoration-color: #797979;font-size: 14px;text-decoration: none;font-family:  'Montserrat', Arial , Helvetica, sans-serif;">{{phone}}</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr  ng-if="skype">
+                                                                        <td height="10"></td>
+                                                                    </tr>
+                                                                    <!--  SKYPE   -->
+                                                                    <tr ng-if="skype">
+                                                                        <td style="width: 19px;max-width: 19px;">
+                                                                            <img src="https://res.cloudinary.com/dcjhiunl4/image/upload/v1565679729/icon-skype_maydnd.png">
+                                                                        </td>
+                                                                        <td style="width: 150px;">
+                                                                            <span style="color: #797979;font-size: 14px;text-decoration-color: #797979;text-decoration: none;font-family:  'Montserrat', Arial , Helvetica, sans-serif;">{{skype}}</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+
+
+
+
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table width="600" style="padding-right: 20px;" border="0" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td height="30"></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="20"></td>
+                                                <td style="width: 180px;max-width: 180px;text-align: center;font-family:  'Montserrat', Arial , Helvetica, sans-serif;" align="ceneter">
+                                                    <span style="color: #7a7a7a;font-size: 12px;font-family:  'Montserrat', Arial , Helvetica, sans-serif;">Polski Bukmacher sp. z o.o. | Limanowskiego 10 | 41-300 Dąbrowa Górnicza</span>
+                                                </td>
+                                                <td width="40"></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="40"></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                    </tr>
+            </table>
+                    </td>
+        </div>
+        <script>
+        $("#html_button").click(function() {
+            var inputs
+            inputs = 0;
+            $('input[data-req="yes"]').each(function(index) {
+
+
+                console.log($(this).val());
+
+                if ($(this).val() == '') {
+                    $(this).css('border', '3px solid red');
+                    inputs = inputs + 1;
+                }
+
+            });
+            $('select[data-req="yes"]').each(function(index) {
+
+
+                console.log($(this).val());
+
+                if ($(this).val() == '') {
+                    $(this).css('border', '3px solid red');
+                    inputs = inputs + 1;
+                }
+
+            });
+
+            $('input').val();
+            if (inputs >= 1) {
+                alert('Please fill all inputs. ' + inputs + " of them are empty...");
+            } else {
+                html = $("#html_gen").html();
+
+
+                $("#html_button").fadeOut();
+                // $("textarea").val(html);
+                $("#form").fadeOut();
+                $("textarea").fadeIn();
+            }
+
+        });
+        </script>
+    </div>
+</body>
+
+</html>
